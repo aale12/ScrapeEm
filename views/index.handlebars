@@ -9,17 +9,19 @@
       Click the Button to begin the Scrape! Be Careful! This will reset all articles and comments!
     </p>
     <a class="btn btn-primary btn-lg" href="/scrape" role="button">{{scrape}}</a>
+    {{#each articleView}}
     <div class="card m-2">
       <h4 class="card-header">Featured</h4>
       <div class="card-body">
-        <a href="#">
-          <h5 class="card-title">Special title treatment</h5>
+        <a href="{{this.link}}">
+          <h5 class="card-title">{{this.title}}</h5>
         </a>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-info">Save Article</a>
-        <a href="#" class="btn btn-info text-right">Save Note</a>
+        <p class="card-text">{{this.summary}}</p>
+        <a data-id={{this._id}} href="#" class="btn btn-info saveButton">Save Article</a>
+        <a data-id={{this._id}} href="#" class="btn btn-info noteButton">Save Note</a>
       </div>
     </div>
+    {{/each}}
   </div>
 </div>
 </div>

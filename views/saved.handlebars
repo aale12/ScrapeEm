@@ -1,0 +1,22 @@
+<div class="container main-panel">
+  <div class="jumbotron">
+    <h1>Saved Articles</h1>
+    <p1 class="lead">
+      Here are the current saved articles from all users
+    </p1>
+    <hr class="my-4">
+    {{#each articleView}}
+    <div class="card m-2">
+      <h4 class="card-header">Featured</h4>
+      <div class="card-body">
+        <a href="{{this.link}}">
+          <h5 class="card-title">{{this.title}}</h5>
+        </a>
+        <p class="card-text">{{this.summary}}</p>
+        <a data-id={{this._id}} href="#" class="btn btn-info deleteSaved">Delete Article</a>
+        <a data-id={{this._id}} href="#" class="btn btn-info addNotesSaved">Notes</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
